@@ -1,60 +1,46 @@
-# SafeRoute
+# 🛡️ SafeRoute – Navigate with Confidence
 
-PWA for safe navigation with crowdsourced danger zones, emergency SOS, and route safety scores.
+SafeRoute is a Progressive Web App that helps people navigate safely by crowdsourcing danger zones, avoiding unsafe areas & traffic congestion, and providing emergency SOS features.
 
-## Setup
+## 🏆 Achievements
+- **2nd Prize** at Hackverse 2.O (BMSIT MCA) – ₹12,000
 
-1. Clone the repo and run `npm install`.
-2. Copy `.env.example` to `.env` and fill in your Supabase credentials.
-3. Run `npm run dev` for development, `npm run build` to create production build.
-4. Set up Supabase tables using the schema below.
+## 🚀 Features
+- 🗺️ **Interactive Map** – Real-time danger zone visualization
+- 📍 **Tap to Report** – Report unsafe areas with type, description & timestamp
+- 🛤️ **Safe Route Generation** – Routes actively avoid danger zones & traffic
+- 🚦 **Live Traffic Density** – Toggle traffic overlay & factor congestion into safety score
+- 🆘 **One-Tap SOS** – Instant emergency alert with live Google Maps link
+- 💬 **Community Forum** – Discuss & rate reported zones
+- ✅ **Community Confirmations** – Verify legitimacy of reports
+- ⭐ **Average Ratings** – Zone ratings calculated from community discussions
+- ⏳ **Auto-Delete** – Reports older than 24 hours automatically removed
+- 🌓 **Dark/Light Theme** – Full theme toggle with dark map tiles
+- 📱 **Installable PWA** – Works offline, mobile-responsive
 
-## Supabase Schema
+## 🛠️ Tech Stack
+- **Frontend:** React 18, Vite 5, Leaflet, React-Leaflet
+- **Backend/Database:** Firebase Firestore (real-time)
+- **Routing:** OSRM (Open Source Routing Machine)
+- **Traffic:** Mapbox Traffic Tiles (free tier)
+- **Geocoding:** Nominatim (OpenStreetMap)
+- **Icons:** Font Awesome (inline SVGs)
+- **PWA:** vite-plugin-pwa
+- **Notifications:** React Hot Toast
 
-```sql
--- Enable pgcrypto for uuid generation if needed
-create extension if not exists "pgcrypto";
+## 🔗 Live Demo
 
--- Danger zones table
-create table danger_zones (
-  id uuid default gen_random_uuid() primary key,
-  user_id text, -- or reference auth.users
-  latitude double precision not null,
-  longitude double precision not null,
-  type text check (type in ('assault', 'theft', 'harassment', 'poor_lighting', 'other')),
-  description text,
-  rating int default 0,
-  confirm_count int default 0,
-  created_at timestamptz default now()
-);
+[Try SafeRoute](https://saferoute-gray-phi.vercel.app/)
 
--- Zone comments / forum
-create table zone_comments (
-  id uuid default gen_random_uuid() primary key,
-  zone_id uuid references danger_zones(id) on delete cascade,
-  user_id text,
-  comment text,
-  rating int check (rating between 1 and 5),
-  created_at timestamptz default now()
-);
+## 👥 Team
+- [Darshan Hulamani](https://www.linkedin.com/in/darshan-hulamani)
+- [Samarth Patil](https://www.linkedin.com/in/samarth-s-patil)
+- [Saikiran Shinde](https://www.linkedin.com/in/saikiran-shinde-2a0236360)
+- [Prem Kalal](https://www.linkedin.com/in/prem-kalal-3a4602279)
 
--- Trusted contacts
-create table trusted_contacts (
-  id uuid default gen_random_uuid() primary key,
-  user_id text not null,
-  name text not null,
-  phone text,
-  email text,
-  priority int default 0
-);
+## 📄 License
+This project is licensed under the MIT License.
 
--- SOS alerts log
-create table sos_alerts (
-  id uuid default gen_random_uuid() primary key,
-  user_id text,
-  latitude double precision,
-  longitude double precision,
-  timestamp timestamptz default now(),
-  status text default 'active'
-);
+---
 
+Built with ❤️ at Hackverse 2.O
