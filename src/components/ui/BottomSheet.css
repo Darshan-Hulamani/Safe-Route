@@ -1,0 +1,34 @@
+.bottom-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  pointer-events: none;
+}
+.bottom-sheet.open {
+  pointer-events: all;
+}
+.sheet-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+}
+.sheet-content {
+  position: relative;
+  background: white;
+  border-radius: 16px 16px 0 0;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 16px;
+}
+.sheet-handle {
+  width: 40px;
+  height: 4px;
+  background: #ced4da;
+  border-radius: 2px;
+  margin: 0 auto 12px;
+}

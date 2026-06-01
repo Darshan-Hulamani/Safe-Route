@@ -1,0 +1,10 @@
+{
+  "name": "SafeRoute",
+  "short_name": "SafeRoute",
+  "description": "Navigate safely with crowdsourced danger zones and SOS.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3c72",
+  "icons": []
+}
