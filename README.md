@@ -32,6 +32,13 @@ SafeRoute is a Progressive Web App that helps people navigate safely by crowdsou
 
 [Try SafeRoute](https://saferoute-gray-phi.vercel.app/)
 
+## 📸 Screenshots
+
+<img width="1280" height="720" alt="Slide1" src="https://github.com/user-attachments/assets/1fbc19a3-778d-4dde-a920-2cfb9eb58fac" />
+<img width="1280" height="720" alt="Slide3" src="https://github.com/user-attachments/assets/4542c13a-487f-4a98-a2f9-aa455b7ea662" />
+<img width="1280" height="720" alt="Slide2" src="https://github.com/user-attachments/assets/6f2e062d-f302-46fe-b906-1d335cc07e0a" />
+<img width="1280" height="720" alt="Slide4" src="https://github.com/user-attachments/assets/cfa5cf04-e271-474d-8545-09819d6fd9cf" />
+
 ## 👥 Team
 - [Darshan Hulamani](https://www.linkedin.com/in/darshan-hulamani)
 - [Samarth Patil](https://www.linkedin.com/in/samarth-s-patil)
